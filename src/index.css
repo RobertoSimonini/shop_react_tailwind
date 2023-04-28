@@ -11,6 +11,18 @@ html, body {
     @apply text-5xl font-extrabold
 }
 
-.page {
-    @apply text-center p-10
+.container {
+    @apply py-16 text-center
+}
+
+.nav-container {
+    @apply w-1/4
+}
+
+.btn {
+    @apply rounded-full text-base px-3 py-1 mx-1 font-bold transition-colors
+} 
+
+.btn.red {
+    @apply bg-red-400 hover:bg-red-500 
 }
