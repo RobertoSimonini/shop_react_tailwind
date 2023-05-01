@@ -1,10 +1,18 @@
 import { NavLink } from "react-router-dom";
 import { CartPanel } from "./CartPanel";
+import { useCartPanel } from "./services";
 
 const isActive = (obj: { isActive: boolean }) => {
   return obj.isActive ? "text-red-600 font-extrabold transition-all" : "";
 };
+
 export function Navbar() {
+  // Funzione per rendere il carrello visibile
+  const CardOpen = useCartPanel((state) => state.open);
+
+  // funzione per togglare lo status del carrello
+  const toggleCartStatus = useCartPanel((state) => state.toggle);
+
   return (
     <>
       <nav className="bg-slate-600 h-14 fixed z-10 top-0 left-0 right-0 shadow-2xl text-lg">
@@ -13,9 +21,12 @@ export function Navbar() {
             <NavLink to="shop" className={isActive}>
               <span className="px-2">Shop</span>
             </NavLink>
-            <NavLink to="cart" className={isActive}>
-              <span className="px-2">Cart</span>
-            </NavLink>
+            <button
+              onClick={toggleCartStatus}
+              className="btn bg-red-700 hover:bg-red-900 px-2"
+            >
+              Cart
+            </button>
           </div>
 
           <div className="nav-container flex items-center flex-row-reverse h-full">
@@ -26,7 +37,7 @@ export function Navbar() {
               <button className="btn red">CMS</button>
             </NavLink>
           </div>
-          <CartPanel />
+          {CardOpen && <CartPanel />}
         </div>
       </nav>
     </>

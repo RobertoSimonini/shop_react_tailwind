@@ -3,6 +3,7 @@ import { Product } from "../../model/product";
 import { useEffect, useState } from "react";
 import { CardProduct } from "./CardProduct";
 import { Loader } from "../../components/Loader";
+import { useCartPanel } from "../../components/services";
 
 export const pb = new PocketBase("http://127.0.0.1:8090");
 
@@ -12,6 +13,9 @@ export function ShopPage() {
 
   // LOADER
   const [isLoading, setLoading] = useState<Boolean>(false);
+
+  //Funzione per aprire l'overlay
+  const openOverlay = useCartPanel((state) => state.openOverlay);
 
   // al mounted chiama il loadData
   useEffect(() => {
@@ -30,7 +34,7 @@ export function ShopPage() {
   };
 
   const addToCart = (product: Partial<Product>) => {
-    console.log(product);
+    openOverlay();
   };
 
   return (

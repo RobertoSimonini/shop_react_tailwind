@@ -1,3 +1,4 @@
+import { useCartPanel } from "../../components/services";
 import { Product } from "../../model/product";
 import { PropsWithChildren } from "react";
 
@@ -11,6 +12,7 @@ interface CardProductProps {
 export function CardProduct(props: PropsWithChildren<CardProductProps>) {
   // Destructuring
   const { product } = props;
+
   return (
     <div className="card w-3/12 shadow-2xl">
       {/* V-IF  */}
