@@ -8,15 +8,7 @@ html, body {
 }
 
 .title {
-    @apply text-5xl font-extrabold
-}
-
-.container {
-    @apply py-16 text-center
-}
-
-.nav-container {
-    @apply w-1/4
+    @apply text-5xl font-sans font-extrabold text-center mb-6
 }
 
 .btn {
@@ -26,3 +18,28 @@ html, body {
 .btn.red {
     @apply bg-red-400 hover:bg-red-500 
 }
+
+.btn.primary {
+    @apply bg-blue-400 hover:bg-blue-600
+}
+
+.cart-button {
+    @apply w-full bg-sky-600 py-1.5 transition-colors hover:bg-sky-700
+}
+
+.card {
+    @apply text-center rounded-xl overflow-hidden
+}
+
+.card-title {
+    @apply font-bold text-xl
+}
+
+section {
+    @apply pt-16
+}
+
+.card .content {
+ @apply bg-white text-black py-3
+}
+

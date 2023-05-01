@@ -1,9 +1,7 @@
-export function LoginPage(){
-    return (
-        <div>
-            <h1 className="title">
-                LOGIN PAGE
-            </h1>
-        </div>
-    )
+export function LoginPage() {
+  return (
+    <section>
+      <h1 className="title">LOGIN PAGE</h1>
+    </section>
+  );
 }

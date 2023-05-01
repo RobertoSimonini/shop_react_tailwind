@@ -4,9 +4,10 @@ import { CheckOutPage } from "./pages/checkout/CheckoutPage";
 import { CartPage } from "./pages/cart/CartPage";
 import { ThanksPage } from "./pages/checkout/ThanksPage";
 import { CMSOrdersPage } from "./pages/cms/orders/CMSOrdersPage";
-import { CMSProductPage } from "./pages/cms/products/CMSProductsPage";
+import { CMSProductsPage } from "./pages/cms/products/CMSProductsPage";
 import { LoginPage } from "./pages/login/LoginPage";
 import { Navbar } from "./components/NavBar";
+import { CMSPage } from "./pages/cms/CMSPage";
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
             <Route path="login" element={<LoginPage />} />
 
             {/* NESTED ROUTES  */}
-            <Route path="cms" element={<CMSOrdersPage />}>
-              <Route path="products" element={<CMSProductPage />} />
+            <Route path="cms" element={<CMSPage />}>
+              <Route path="products" element={<CMSProductsPage />} />
               <Route path="orders" element={<CMSOrdersPage />} />
               {/* DEFAULT CMS  */}
               <Route index element={<Navigate to="products" />} />
