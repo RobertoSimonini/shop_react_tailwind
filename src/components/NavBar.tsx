@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+import { CartPanel } from "./CartPanel";
+
 const isActive = (obj: { isActive: boolean }) => {
   return obj.isActive ? "text-red-600 font-extrabold transition-all" : "";
 };
@@ -24,6 +26,7 @@ export function Navbar() {
               <button className="btn red">CMS</button>
             </NavLink>
           </div>
+          <CartPanel />
         </div>
       </nav>
     </>
