@@ -1,11 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import { useCartPanel } from "./services";
 
 export function CartPanel() {
   const navigate = useNavigate();
+  const closeCartPanel = useCartPanel((state) => state.closeOverlay);
 
   const gotoCart = () => {
     navigate("cart");
+    closeCartPanel();
   };
+
   return (
     <div className="fixed bg-slate-800 right-4 top-24 p-3 rounded-xl shadow-2xl w-96">
       <ul className="flex flex-col gap-4">
