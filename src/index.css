@@ -23,6 +23,10 @@ html, body {
     @apply bg-blue-400 hover:bg-blue-600
 }
 
+.btn.white {
+    @apply bg-slate-200 text-black hover:bg-slate-400
+}
+
 .cart-button {
     @apply w-full bg-sky-600 py-1.5 transition-colors hover:bg-sky-700
 }
