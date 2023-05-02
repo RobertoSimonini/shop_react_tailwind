@@ -9,3 +9,7 @@ export const totalCost = (state: CartState) =>
 // Selector Total items
 export const totalItems = (state: CartState) =>
   state.list.reduce((acc, item) => acc + item.qty, 0);
+
+export const increase = (state: CartState) => state.increaseQty;
+
+export const decrease = (state: CartState) => state.decreaseQty;

@@ -1,9 +1,7 @@
-export function CheckOutPage(){
-    return (
-        <div>
-            <h1 className="title">
-                CHECKOUT PAGE
-            </h1>
-        </div>
-    )
+export function CheckOutPage() {
+  return (
+    <section>
+      <h1 className="title">CHECKOUT PAGE</h1>
+    </section>
+  );
 }
