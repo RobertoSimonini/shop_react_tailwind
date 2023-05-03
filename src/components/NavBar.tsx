@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { CartPanel } from "./CartPanel";
 import { useCartPanel } from "./services";
-import { totalItems } from "../pages/cart/cart.selectors";
+import { empty, totalItems } from "../pages/cart/cart.selectors";
 import { useCart } from "../pages/cart/useCart";
 
 const isActive = (obj: { isActive: boolean }) => {
@@ -17,6 +17,9 @@ export function Navbar() {
 
   //funzione per recuperare il totale di elementi nel carrello
   const total = useCart(totalItems);
+
+  // funzione per recuperare la lista del carrello quando vuota
+  const isEmpty = useCart(empty);
   return (
     <>
       <nav className="bg-slate-600 h-14 fixed z-10 top-0 left-0 right-0 shadow-2xl text-lg">
@@ -27,7 +30,8 @@ export function Navbar() {
             </NavLink>
             <button
               onClick={toggleCartStatus}
-              className="btn bg-red-700 hover:bg-red-900 px-2"
+              className="btn bg-red-700 hover:bg-red-900 px-2 disabled:opacity-50 disabled:hover:bg-red-700"
+              disabled={isEmpty}
             >
               Cart {total}
             </button>

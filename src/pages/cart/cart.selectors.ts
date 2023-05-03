@@ -13,3 +13,5 @@ export const totalItems = (state: CartState) =>
 export const increase = (state: CartState) => state.increaseQty;
 
 export const decrease = (state: CartState) => state.decreaseQty;
+
+export const empty = (state: CartState) => !state.list.length;

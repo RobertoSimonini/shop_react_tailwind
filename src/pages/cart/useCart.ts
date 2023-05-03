@@ -60,5 +60,5 @@ export const useCart = create<CartState>((set, get) => ({
     }
   },
 
-  clearCart: () => {},
+  clearCart: () => set({ list: [] }),
 }));
