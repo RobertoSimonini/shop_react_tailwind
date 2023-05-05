@@ -8,6 +8,7 @@ import { CMSProductsPage } from "./pages/cms/products/CMSProductsPage";
 import { LoginPage } from "./pages/login/LoginPage";
 import { Navbar } from "./components/NavBar";
 import { CMSPage } from "./pages/cms/CMSPage";
+import { PrivatePage } from "./components/shared";
 
 function App() {
   return (
@@ -24,7 +25,14 @@ function App() {
             <Route path="login" element={<LoginPage />} />
 
             {/* NESTED ROUTES  */}
-            <Route path="cms" element={<CMSPage />}>
+            <Route
+              path="cms"
+              element={
+                <PrivatePage>
+                  <CMSPage />
+                </PrivatePage>
+              }
+            >
               <Route path="products" element={<CMSProductsPage />} />
               <Route path="orders" element={<CMSOrdersPage />} />
               {/* DEFAULT CMS  */}

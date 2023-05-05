@@ -78,7 +78,7 @@ export function CheckOutPage() {
           />
           <button
             disabled={!isValid}
-            className="bg-slate-500 w-full my-2 p-1 transition-colors hover:bg-slate-600 disabled:opacity-50 disabled:bg-slate-500"
+            className="bg-green-500 w-full my-2 p-1 transition-colors hover:bg-green-600 disabled:opacity-50 disabled:bg-slate-500"
           >
             Confirm Order
           </button>

@@ -5,6 +5,7 @@ import { CardProduct } from "./CardProduct";
 import { Loader } from "../../components/Loader";
 import { useCartPanel } from "../../components/services";
 import { useCart } from "../cart/useCart";
+import { get } from "../../components/services/crud/products.api";
 
 export const pb = new PocketBase("http://127.0.0.1:8090");
 
@@ -29,12 +30,10 @@ export function ShopPage() {
   // Funzione che utilizza le SDK di Pocketbase per comunicare con il db e prendere tutti i prodotti
   const loadData = () => {
     setLoading(true);
-    pb.collection("products")
-      .getList<Product>()
-      .then((res) => {
-        setProducts(res.items);
-        setLoading(false);
-      });
+    get().then((res) => {
+      setProducts(res.items);
+      setLoading(false);
+    });
   };
 
   const addToCart = (product: Product) => {

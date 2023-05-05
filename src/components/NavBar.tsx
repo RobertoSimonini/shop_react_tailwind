@@ -56,11 +56,13 @@ export function Navbar() {
               <button className="btn red">CMS</button>
             </NavLink>
 
-            <NavLink to="login">
-              <button className="btn red">login</button>
-            </NavLink>
-
-            <IfLogged>
+            <IfLogged
+              else={
+                <NavLink to="login">
+                  <button className="btn red">login</button>
+                </NavLink>
+              }
+            >
               <button className="btn red" onClick={logoutHandler}>
                 logout
               </button>
